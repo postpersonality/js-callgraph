@@ -59,6 +59,7 @@ function buildCallGraph(ast, noOneShot) {
         addOneShotEdges(ast, fg);
     }
     flowgraph.addIntraproceduralFlowGraphEdges(ast, fg);
+    natives.addStepFlowEdges(ast, fg);  // Add Step() flow edges
     return callgraph.extractCG(ast, fg);
 }
 

@@ -98,6 +98,7 @@ function buildCallGraph(ast) {
     const fg = new graph.FlowGraph();
     natives.addNativeFlowEdges(fg);
     flowgraph.addIntraproceduralFlowGraphEdges(ast, fg);
+    natives.addStepFlowEdges(ast, fg);  // Add Step() flow edges
 
     const expFuncs = {};
     const impFuncs = {};

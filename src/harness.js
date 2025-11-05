@@ -788,5 +788,6 @@ exports.nativeFlows = {
     "Audio_prototype_play": "play",
     "Node_prototype_attachEvent": "attachEvent",
     "Node_prototype_detachEvent": "detachEvent",
-    "Node_prototype_doScroll": "doScroll"
+    "Node_prototype_doScroll": "doScroll",
+    "Step": "Step"
 };

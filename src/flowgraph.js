@@ -473,3 +473,4 @@ exports.retVertex = retVertex;
 exports.resVertex = resVertex;
 exports.vertexFor = vertexFor;
 exports.propVertex = propVertex;
+exports.calleeVertex = calleeVertex;

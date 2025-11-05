@@ -84,6 +84,27 @@ Module `flowgraph.js` contains the code for extracting an intraprocedural flow g
 
 Modules `pessimistic.js` and `semioptimistic.js` implement the pessimistic and optimistic call graph builders, respectively. They both use `flowgraph.js` to build an intraprocedural flow graph, and then add some edges corresponding to interprocedural flow. Both use module `callgraph.js` for extracting a call graph from a given flow graph, by collecting, for every call site, all functions that can flow into the callee position. Both use module `natives.js` to add flow edges modelling well-known standard library functions.
 
+## AWS Step Functions Support
+
+This implementation includes special handling for AWS Step Functions workflows via the `Step` function. When analyzing code that uses `Step(fn1, fn2, fn3, ...)`, the call graph will correctly model the sequential execution chain where each function is called after the previous one completes.
+
+Example:
+```javascript
+function step1() { console.log("Step 1"); }
+function step2() { console.log("Step 2"); }
+function step3() { console.log("Step 3"); }
+
+Step(step1, step2, step3);
+```
+
+This produces the call graph chain: `global → step1 → step2 → step3`, accurately representing that step2 is invoked when step1 completes, and step3 when step2 completes.
+
+The Step function handler supports:
+- Named function declarations
+- Arrow functions
+- Anonymous function expressions
+- Both ONESHOT and DEMAND strategies
+
 The remaining modules define key data structures, in several variants.
 
 Module `graph.js` implements graphs using adjacency sets, using sets of numbers as implemented by `numset.js`. The latter includes either `olist.js` to implement sets as ordered lists of numbers, or `bitset.js` to use bitsets (with disappointing performance, so we use ordered lists by default).

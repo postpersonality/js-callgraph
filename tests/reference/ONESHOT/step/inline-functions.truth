@@ -1,0 +1,298 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 3,
+      "column": 0
+    },
+    "end": {
+      "row": 13,
+      "column": 1
+    },
+    "range": {
+      "start": 49,
+      "end": 233
+    }
+  },
+  "target": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 4,
+      "column": 4
+    },
+    "end": {
+      "row": 6,
+      "column": 5
+    },
+    "range": {
+      "start": 59,
+      "end": 112
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 4,
+      "column": 4
+    },
+    "end": {
+      "row": 6,
+      "column": 5
+    },
+    "range": {
+      "start": 59,
+      "end": 112
+    }
+  },
+  "target": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 7,
+      "column": 4
+    },
+    "end": {
+      "row": 9,
+      "column": 5
+    },
+    "range": {
+      "start": 118,
+      "end": 172
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 7,
+      "column": 4
+    },
+    "end": {
+      "row": 9,
+      "column": 5
+    },
+    "range": {
+      "start": 118,
+      "end": 172
+    }
+  },
+  "target": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 10,
+      "column": 4
+    },
+    "end": {
+      "row": 12,
+      "column": 5
+    },
+    "range": {
+      "start": 178,
+      "end": 231
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 11,
+      "column": 8
+    },
+    "end": {
+      "row": 11,
+      "column": 33
+    },
+    "range": {
+      "start": 199,
+      "end": 224
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 11,
+      "column": 8
+    },
+    "end": {
+      "row": 11,
+      "column": 33
+    },
+    "range": {
+      "start": 199,
+      "end": 224
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 8,
+      "column": 8
+    },
+    "end": {
+      "row": 8,
+      "column": 34
+    },
+    "range": {
+      "start": 139,
+      "end": 165
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 8,
+      "column": 8
+    },
+    "end": {
+      "row": 8,
+      "column": 34
+    },
+    "range": {
+      "start": 139,
+      "end": 165
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 5,
+      "column": 8
+    },
+    "end": {
+      "row": 5,
+      "column": 33
+    },
+    "range": {
+      "start": 80,
+      "end": 105
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/inline-functions.js",
+    "start": {
+      "row": 5,
+      "column": 8
+    },
+    "end": {
+      "row": 5,
+      "column": 33
+    },
+    "range": {
+      "start": 80,
+      "end": 105
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

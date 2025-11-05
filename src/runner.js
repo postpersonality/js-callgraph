@@ -175,13 +175,17 @@ let build = function () {
             edgesOfFunctionsCalled = retrieveAllCalledFunctionsStatic(cg);
         }
     }
-    var outputFilename = this.args.output[0];
-    var matchRegex = outputFilename.match(/^(.*\/)([^\/]+\.json)$/); // Extract the output directory from the filename pased from Lacuna
-    if (matchRegex) {
-        var outputDirectory = matchRegex[1];
-        fs.writeFileSync(`${outputDirectory}edges-${args.analyzertype}.json`, JSON.stringify(edgesOfFunctionsCalled, null, 2));
-    } else {
-        console.error('File write error while extracting CG edges');
+    
+    // Only write to file if output is specified and we have edges to write
+    if (this.args.output && this.args.output[0] && edgesOfFunctionsCalled) {
+        var outputFilename = this.args.output[0];
+        var matchRegex = outputFilename.match(/^(.*\/)([^\/]+\.json)$/); // Extract the output directory from the filename pased from Lacuna
+        if (matchRegex) {
+            var outputDirectory = matchRegex[1];
+            fs.writeFileSync(`${outputDirectory}edges-${args.analyzertype}.json`, JSON.stringify(edgesOfFunctionsCalled, null, 2));
+        } else {
+            console.error('File write error while extracting CG edges');
+        }
     }
     if (args.time) console.timeEnd("callgraph");
 
@@ -204,7 +208,7 @@ let build = function () {
         cg.edges.iter(function (call, fn) {
             result.push(buildBinding(call, fn));
             if (consoleOutput) {
-                // console.log(pp(call) + " -> " + pp(fn));
+                console.log(pp(call) + " -> " + pp(fn));
             }
         });
         if (this.args.output !== undefined) {

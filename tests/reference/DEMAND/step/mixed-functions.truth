@@ -1,0 +1,298 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 9,
+      "column": 0
+    },
+    "end": {
+      "row": 13,
+      "column": 1
+    },
+    "range": {
+      "start": 164,
+      "end": 255
+    }
+  },
+  "target": {
+    "label": "namedFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 3,
+      "column": 0
+    },
+    "end": {
+      "row": 5,
+      "column": 1
+    },
+    "range": {
+      "start": 42,
+      "end": 101
+    }
+  }
+},{
+  "source": {
+    "label": "namedFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 10,
+      "column": 4
+    },
+    "end": {
+      "row": 10,
+      "column": 13
+    },
+    "range": {
+      "start": 174,
+      "end": 183
+    }
+  },
+  "target": {
+    "label": "arrowFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 7,
+      "column": 18
+    },
+    "end": {
+      "row": 7,
+      "column": 58
+    },
+    "range": {
+      "start": 121,
+      "end": 161
+    }
+  }
+},{
+  "source": {
+    "label": "arrowFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 11,
+      "column": 4
+    },
+    "end": {
+      "row": 11,
+      "column": 13
+    },
+    "range": {
+      "start": 189,
+      "end": 198
+    }
+  },
+  "target": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 12,
+      "column": 4
+    },
+    "end": {
+      "row": 12,
+      "column": 53
+    },
+    "range": {
+      "start": 204,
+      "end": 253
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 12,
+      "column": 17
+    },
+    "end": {
+      "row": 12,
+      "column": 50
+    },
+    "range": {
+      "start": 217,
+      "end": 250
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "anon",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 12,
+      "column": 17
+    },
+    "end": {
+      "row": 12,
+      "column": 50
+    },
+    "range": {
+      "start": 217,
+      "end": 250
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "arrowFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 7,
+      "column": 26
+    },
+    "end": {
+      "row": 7,
+      "column": 55
+    },
+    "range": {
+      "start": 129,
+      "end": 158
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "arrowFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 7,
+      "column": 26
+    },
+    "end": {
+      "row": 7,
+      "column": 55
+    },
+    "range": {
+      "start": 129,
+      "end": 158
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "namedFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 4,
+      "column": 4
+    },
+    "end": {
+      "row": 4,
+      "column": 33
+    },
+    "range": {
+      "start": 69,
+      "end": 98
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "namedFunc",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/step/mixed-functions.js",
+    "start": {
+      "row": 4,
+      "column": 4
+    },
+    "end": {
+      "row": 4,
+      "column": 33
+    },
+    "range": {
+      "start": 69,
+      "end": 98
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

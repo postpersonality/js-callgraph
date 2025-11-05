@@ -312,12 +312,18 @@ Key responsibilities:
 - Handle setTimeout/setInterval
 - Handle Object methods
 - Handle Function.prototype methods
+- **Handle `step` library (`Step`) for controlling async flow and sequential callback execution**
 
 Key functions:
 - `addNativeFlowEdges()`: Add flow edges for native callback-accepting functions
-- Implements flow for: Array.prototype methods, Function.prototype methods, Promise methods, timer functions, etc.
-- Adds vertices for built-in functions (defined in `harness.js`)
-- Connects them to their corresponding property vertices (e.g., `NativeVertex('Math_log')` → `PropVertex('log')`)
+  - Implements flow for: Array.prototype methods, Function.prototype methods, Promise methods, timer functions, etc.
+  - Adds vertices for built-in functions (defined in `harness.js`)
+  - Connects them to their corresponding property vertices (e.g., `NativeVertex('Math_log')` → `PropVertex('log')`)
+- `addStepFlowEdges()`: Add flow edges for `step` npm package calls
+  - Detects `Step(fn1, fn2, fn3, ...)` calls for async flow control
+  - Creates sequential call chain edges: `fn1 → fn2 → fn3` to model linearized callbacks
+  - Connects each function's return to the next function's call site
+  - Models the sequential execution pattern without self-loops
 
 #### `src/harness.js`
 **Native function definitions**
@@ -326,6 +332,7 @@ Key responsibilities:
 - Lists native JavaScript functions
 - Provides function signatures for built-in APIs
 - Used by `natives.js` to model native function behavior
+- **Defines `Step` for the `step` npm package (async flow control library)**
 
 #### `src/module.js`
 **Module import/export handling**
