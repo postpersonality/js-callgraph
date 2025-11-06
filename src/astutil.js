@@ -177,6 +177,11 @@ function init(root) {
                 if (parent?.type === 'AssignmentExpression') {
                     if (parent?.left?.type == 'Identifier') {
                         hasParentName = true;
+                    } else if (parent?.left?.type === 'MemberExpression') {
+                        // exports.fn = function() {} should have a name
+                        if (!parent.left.computed && parent.left.property?.type === 'Identifier') {
+                            hasParentName = true;
+                        }
                     }
                 } else if (parent?.type == 'VariableDeclarator') {
                     if (parent?.id?.type == 'Identifier') {
@@ -353,6 +358,12 @@ function funcname(func) {
         if (parent?.type === 'AssignmentExpression') {
             if (parent?.left?.type == 'Identifier') {
                 return parent.left.name;
+            } else if (parent?.left?.type === 'MemberExpression') {
+                // exports.fn = function() {} -> "fn"
+                // module.exports.fn = function() {} -> "fn"
+                if (!parent.left.computed && parent.left.property?.type === 'Identifier') {
+                    return parent.left.property.name;
+                }
             }
         } else if (parent?.type == 'VariableDeclarator') {
             if (parent?.id?.type == 'Identifier') {

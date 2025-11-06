@@ -1,0 +1,298 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 13,
+      "column": 0
+    },
+    "end": {
+      "row": 13,
+      "column": 12
+    },
+    "range": {
+      "start": 176,
+      "end": 188
+    }
+  },
+  "target": {
+    "label": "fn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 1,
+      "column": 13
+    },
+    "end": {
+      "row": 3,
+      "column": 1
+    },
+    "range": {
+      "start": 13,
+      "end": 53
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 14,
+      "column": 0
+    },
+    "end": {
+      "row": 14,
+      "column": 17
+    },
+    "range": {
+      "start": 190,
+      "end": 207
+    }
+  },
+  "target": {
+    "label": "handler",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 5,
+      "column": 18
+    },
+    "end": {
+      "row": 7,
+      "column": 1
+    },
+    "range": {
+      "start": 74,
+      "end": 117
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 15,
+      "column": 0
+    },
+    "end": {
+      "row": 15,
+      "column": 17
+    },
+    "range": {
+      "start": 209,
+      "end": 226
+    }
+  },
+  "target": {
+    "label": "arrowFn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 9,
+      "column": 18
+    },
+    "end": {
+      "row": 11,
+      "column": 1
+    },
+    "range": {
+      "start": 138,
+      "end": 173
+    }
+  }
+},{
+  "source": {
+    "label": "arrowFn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 10,
+      "column": 4
+    },
+    "end": {
+      "row": 10,
+      "column": 24
+    },
+    "range": {
+      "start": 150,
+      "end": 170
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "arrowFn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 10,
+      "column": 4
+    },
+    "end": {
+      "row": 10,
+      "column": 24
+    },
+    "range": {
+      "start": 150,
+      "end": 170
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "handler",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 6,
+      "column": 4
+    },
+    "end": {
+      "row": 6,
+      "column": 26
+    },
+    "range": {
+      "start": 92,
+      "end": 114
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "handler",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 6,
+      "column": 4
+    },
+    "end": {
+      "row": 6,
+      "column": 26
+    },
+    "range": {
+      "start": 92,
+      "end": 114
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "fn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 2,
+      "column": 4
+    },
+    "end": {
+      "row": 2,
+      "column": 23
+    },
+    "range": {
+      "start": 31,
+      "end": 50
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "fn",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/export-fn.js",
+    "start": {
+      "row": 2,
+      "column": 4
+    },
+    "end": {
+      "row": 2,
+      "column": 23
+    },
+    "range": {
+      "start": 31,
+      "end": 50
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

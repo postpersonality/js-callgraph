@@ -1,0 +1,3 @@
+export-fn.js:global:13 -> export-fn.js:fn:1
+export-fn.js:global:14 -> export-fn.js:handler:5
+export-fn.js:global:15 -> export-fn.js:arrowFn:9

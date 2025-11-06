@@ -49,7 +49,7 @@
     }
   },
   "target": {
-    "label": "Apple:anon[1]",
+    "label": "grow",
     "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/basic-class.js",
     "start": {
       "row": 2,

@@ -1,0 +1,11 @@
+[
+  "export-fn.js@13:176-188 -> export-fn.js@1:13-53",
+  "export-fn.js@14:190-207 -> export-fn.js@5:74-117",
+  "export-fn.js@15:209-226 -> export-fn.js@9:138-173",
+  "export-fn.js@10:150-170 -> console_log",
+  "export-fn.js@10:150-170 -> Math_log",
+  "export-fn.js@6:92-114 -> console_log",
+  "export-fn.js@6:92-114 -> Math_log",
+  "export-fn.js@2:31-50 -> console_log",
+  "export-fn.js@2:31-50 -> Math_log"
+]
