@@ -80,6 +80,11 @@ function init(root) {
     // Key: enclosingFunction (or 'global'), Value: counter
     const anonCounters = new Map();
     
+    // Map to track actual AST parent for array elements
+    // When visitor traverses arrays, elements get the array as parent
+    // We need to track the AST node that owns the array
+    const arrayParents = new Map();
+    
     function getNextAnonIndex(encFunc) {
         const key = encFunc || 'global';
         const current = anonCounters.get(key) || 0;
@@ -89,6 +94,16 @@ function init(root) {
     }
     
     visit(root, function (nd, doVisit, parent, childProp) {
+        // Track array parents for proper callback detection
+        // This needs to happen BEFORE we process children, so when
+        // children are visited, they can look up their array's owner
+        for (let p in nd) {
+            if (!nd.hasOwnProperty(p))
+                continue;
+            if (Array.isArray(nd[p])) {
+                arrayParents.set(nd[p], nd);
+            }
+        }
         if (nd.type && !nd.attr)
             nd.attr = {};
 
@@ -171,9 +186,46 @@ function init(root) {
                 willBeAnonymous = !hasParentName;
             }
             
-            // If function is anonymous, assign it an index
+            // If function is anonymous, determine if it's a callback or regular anonymous
             if (willBeAnonymous) {
-                nd.attr.anonIndex = getNextAnonIndex(enclosingFunction);
+                // Get the real parent if parent is an array
+                const realParent = Array.isArray(parent) ? arrayParents.get(parent) : parent;
+                
+                // Check if function is a callback (passed as argument to a call)
+                // When parent is an array, childProp is the numeric index
+                // We need to check if realParent is a CallExpression and has 'arguments' property
+                const isCallback = (realParent?.type === 'CallExpression' || realParent?.type === 'NewExpression') 
+                                  && Array.isArray(parent) && realParent.arguments === parent;
+                
+                if (isCallback) {
+                    // Save callback context information
+                    nd.attr.isCallback = true;
+                    nd.attr.callbackCallNode = realParent;  // save reference to CallExpression
+                    
+                    // Find index of this function among arguments
+                    const argumentIndex = parent.indexOf(nd);
+                    nd.attr.callbackArgumentIndex = argumentIndex;
+                    
+                    // Count how many functions are passed in this call (for numbering)
+                    const functionArgsCount = parent.filter(arg => 
+                        arg.type === 'FunctionExpression' || 
+                        arg.type === 'ArrowFunctionExpression'
+                    ).length;
+                    nd.attr.callbackFunctionArgsCount = functionArgsCount;
+                    
+                    // Determine position among function arguments (not all arguments)
+                    let functionArgPosition = 0;
+                    for (let i = 0; i <= argumentIndex; i++) {
+                        const arg = parent[i];
+                        if (arg.type === 'FunctionExpression' || arg.type === 'ArrowFunctionExpression') {
+                            functionArgPosition++;
+                        }
+                    }
+                    nd.attr.callbackFunctionPosition = functionArgPosition;
+                } else {
+                    // Not a callback - use existing anonymous numbering
+                    nd.attr.anonIndex = getNextAnonIndex(enclosingFunction);
+                }
             }
             
             const old_enclosingFunction = enclosingFunction;
@@ -242,23 +294,93 @@ function isAnon(funcName) {
     return funcName === "anon";
 }
 
+/**
+ * Builds name from a MemberExpression chain
+ * @param {Object} node - MemberExpression node
+ * @returns {string} - name like "obj.prop.method"
+ */
+function buildMemberExpressionName(node) {
+    if (node.type === 'Identifier') {
+        return node.name;
+    }
+    
+    if (node.type === 'MemberExpression') {
+        const objectName = buildMemberExpressionName(node.object);
+        const propertyName = node.computed 
+            ? '[computed]'  // for obj[expr]
+            : node.property.name;
+        return `${objectName}.${propertyName}`;
+    }
+    
+    return 'unknown';
+}
+
+/**
+ * Extracts the name of the called function from a CallExpression
+ * @param {Object} callNode - CallExpression node
+ * @returns {string|null} - function name or null if cannot determine
+ */
+function getCalleeName(callNode) {
+    if (!callNode || callNode.type !== 'CallExpression') {
+        return null;
+    }
+    
+    const callee = callNode.callee;
+    
+    // Simple case: someFn(...)
+    if (callee.type === 'Identifier') {
+        return callee.name;
+    }
+    
+    // Method call: obj.method(...)
+    if (callee.type === 'MemberExpression') {
+        // Build full name: obj.prop.method
+        return buildMemberExpressionName(callee);
+    }
+    
+    // Other cases (e.g., IIFE): cannot determine simple name
+    return null;
+}
+
 // func must be function node in ast
 function funcname(func) {
     if (func === undefined) {
         console.log('WARNING: func undefined in astutil/funcname.');
     } else if (func.id === null) {
         const parent = func?.attr?.parent;
+        
+        // Try to find name through parent nodes
         if (parent?.type === 'AssignmentExpression') {
-            if( parent?.left?.type == 'Identifier') {
+            if (parent?.left?.type == 'Identifier') {
                 return parent.left.name;
             }
         } else if (parent?.type == 'VariableDeclarator') {
-            if( parent?.id?.type == 'Identifier') {
+            if (parent?.id?.type == 'Identifier') {
                 return parent.id.name;
             }
         }
         
-        // If function has an anonymous index, use numbered naming
+        // Handle callbacks with contextual naming
+        if (func.attr && func.attr.isCallback) {
+            const callNode = func.attr.callbackCallNode;
+            const calleeName = getCalleeName(callNode);
+            
+            if (calleeName) {
+                const functionArgsCount = func.attr.callbackFunctionArgsCount;
+                const functionPosition = func.attr.callbackFunctionPosition;
+                
+                // If only one callback in the call
+                if (functionArgsCount === 1) {
+                    return `clb(${calleeName})`;
+                } else {
+                    // If multiple callbacks, add index
+                    return `clb(${calleeName})[${functionPosition}]`;
+                }
+            }
+            // If couldn't get callee name, fallback to regular numbering
+        }
+        
+        // Existing logic for regular anonymous functions
         if (func.attr && typeof func.attr.anonIndex === 'number') {
             const encFunc = func.attr.enclosingFunction;
             const parentName = encFuncName(encFunc);
@@ -636,3 +758,5 @@ module.exports.isCallTo = isCallTo;
 module.exports.getReturnValues = getReturnValues;
 module.exports.isFunction = isFunction;
 module.exports.cf = cf;
+module.exports.getCalleeName = getCalleeName;
+module.exports.buildMemberExpressionName = buildMemberExpressionName;

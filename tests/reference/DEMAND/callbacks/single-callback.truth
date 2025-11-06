@@ -1,0 +1,3 @@
+single-callback.js:global:5 -> single-callback.js:someFn:1
+single-callback.js:someFn:2 -> single-callback.js:clb(someFn):5
+single-callback.js:clb(someFn):6 -> Native

@@ -1,0 +1,3 @@
+method-callback.js:global:1 -> Native
+method-callback.js:global:2 -> Native
+method-callback.js:clb(unknown.forEach):1 -> Native

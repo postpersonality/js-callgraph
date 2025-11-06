@@ -1,0 +1,5 @@
+multiple-callbacks.js:global:6 -> multiple-callbacks.js:someFn:1
+multiple-callbacks.js:someFn:2 -> multiple-callbacks.js:clb(someFn)[1]:7
+multiple-callbacks.js:someFn:3 -> multiple-callbacks.js:clb(someFn)[2]:8
+multiple-callbacks.js:clb(someFn)[1]:7 -> Native
+multiple-callbacks.js:clb(someFn)[2]:8 -> Native

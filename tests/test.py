@@ -20,6 +20,7 @@ test_dirs = ['basics',
              'import-export/module.exports',
              'typescript',
              'JSX',
+             'callbacks',
 #              'vue'
              ]
 
