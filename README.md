@@ -84,9 +84,47 @@ Module `flowgraph.js` contains the code for extracting an intraprocedural flow g
 
 Modules `pessimistic.js` and `semioptimistic.js` implement the pessimistic and optimistic call graph builders, respectively. They both use `flowgraph.js` to build an intraprocedural flow graph, and then add some edges corresponding to interprocedural flow. Both use module `callgraph.js` for extracting a call graph from a given flow graph, by collecting, for every call site, all functions that can flow into the callee position. Both use module `natives.js` to add flow edges modelling well-known standard library functions.
 
-## AWS Step Functions Support
+## Function Naming
 
-This implementation includes special handling for AWS Step Functions workflows via the `Step` function. When analyzing code that uses `Step(fn1, fn2, fn3, ...)`, the call graph will correctly model the sequential execution chain where each function is called after the previous one completes.
+### Anonymous Function Naming
+Anonymous functions are assigned contextual names based on their usage:
+- Functions assigned to variables: Use the variable name
+- Nested anonymous functions: Named as `parentFunction:anon[N]` where N is the index within the parent scope
+
+### Callback Function Naming
+Anonymous functions passed as callbacks are named using the pattern `clb(functionName)` to improve readability:
+
+**Single callback:**
+```javascript
+setTimeout(function() {
+    console.log("Hello");
+}, 1000);
+```
+The anonymous function is named: `clb(setTimeout)`
+
+**Multiple callbacks:**
+```javascript
+processData(
+    function() { console.log("First"); },
+    () => { console.log("Second"); }
+);
+```
+The callbacks are named: `clb(processData)[1]` and `clb(processData)[2]`
+
+**Method callbacks:**
+```javascript
+[1, 2, 3].forEach(x => console.log(x));
+```
+The arrow function is named: `clb(unknown.forEach)`
+
+This naming convention makes call graphs more readable by clearly indicating:
+- That a function is used as a callback
+- Which function it's passed to
+- Its position when multiple callbacks are provided
+
+## `step` npm Package Support
+
+This implementation includes special handling for the [`step`](https://www.npmjs.com/package/step) npm package, a library for controlling async flow by linearizing callback hell. When analyzing code that uses `Step(fn1, fn2, fn3, ...)`, the call graph will correctly model the sequential execution chain where each function is called after the previous one completes.
 
 Example:
 ```javascript

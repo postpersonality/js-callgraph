@@ -1,4 +1,4 @@
-# AGENTS3.md - js-callgraph Project Documentation
+# AGENTS.md - js-callgraph Project Documentation
 
 ## Project Overview
 
@@ -14,6 +14,8 @@ The tool traces data flow to determine which functions can be called from which 
 - Multiple analysis strategies (NONE, ONESHOT, DEMAND, FULL)
 - JSON output format for call graph representation
 - Native function modeling for built-in JavaScript APIs
+- Contextual callback naming (`clb(functionName)` pattern) for improved readability
+- Smart function naming with anonymous function indexing
 
 ### Research Foundation
 Based on the paper: "Efficient Construction of Approximate Call Graphs for JavaScript IDE Services" (ICSE 2013)
@@ -50,6 +52,11 @@ Source Files → Parse (AST) → Bind → Flow Graph → Call Graph → JSON Out
    - Cache them at the root (`root.attr.functions`, `root.attr.calls`)
    - Track enclosing functions and files
    - Initialize `attr` fields for attaching metadata to nodes
+   - Detect callback contexts for anonymous functions:
+     - Track array parent relationships to identify callback arguments
+     - Mark functions as callbacks when passed as arguments to calls
+     - Store callback metadata: `isCallback`, `callbackCallNode`, `callbackArgumentIndex`, `callbackFunctionArgsCount`, `callbackFunctionPosition`
+   - Assign anonymous function indices for non-callback anonymous functions
 
 3. **Binding Resolution**: Resolve name bindings for lexical variables
    - `bindings.addBindings()` builds a **Symbol Table** (`Symtab`) for each scope
@@ -145,6 +152,7 @@ Key responsibilities:
 - Set up `attr` fields for attaching metadata to nodes
 - Track enclosing functions and files
 - Handle function naming (including anonymous functions, arrow functions, class methods)
+- Detect and name callback functions contextually
 - Preprocess Vue.js single-file components
 
 Key functions:
@@ -152,9 +160,17 @@ Key functions:
 - `visit()`: Traverse AST with visitor pattern
 - `visitWithState()`: Traverse AST with stateful visitor
 - `init()`: Initialize AST attributes (enclosingFunction, enclosingFile, etc.), cache functions and calls
-- `funcname()`: Extract function names with fallbacks
+- `funcname()`: Extract function names with fallbacks and callback naming
 - `encFuncName()`: Get enclosing function name
 - `ppPos()`: Pretty-print position information
+- `buildMemberExpressionName()`: Build names from MemberExpression chains (e.g., "obj.prop.method")
+- `getCalleeName()`: Extract function name from CallExpression nodes
+
+Function naming strategy:
+- Named functions use their declared name
+- Anonymous functions assigned to variables use the variable name
+- Anonymous callback functions use `clb(functionName)` pattern (single callback) or `clb(functionName)[N]` (multiple callbacks)
+- Other anonymous functions use `parentFunction:anon[N]` pattern
 
 #### `src/bindings.js`
 **Name binding resolution for lexical variables**
@@ -312,7 +328,7 @@ Key responsibilities:
 - Handle setTimeout/setInterval
 - Handle Object methods
 - Handle Function.prototype methods
-- **Handle `step` library (`Step`) for controlling async flow and sequential callback execution**
+- Handle `step` library (`Step`) for controlling async flow and sequential callback execution
 
 Key functions:
 - `addNativeFlowEdges()`: Add flow edges for native callback-accepting functions
@@ -332,7 +348,7 @@ Key responsibilities:
 - Lists native JavaScript functions
 - Provides function signatures for built-in APIs
 - Used by `natives.js` to model native function behavior
-- **Defines `Step` for the `step` npm package (async flow control library)**
+- Defines `Step` for the `step` npm package (async flow control library)
 
 #### `src/module.js`
 **Module import/export handling**
@@ -659,12 +675,64 @@ const result = JCG.build();
 - **start/end**: Line and column positions
 - **range**: Character offset positions (start and end character offsets)
 
+### Function Naming Examples
+
+The tool uses intelligent naming for anonymous functions based on context:
+
+**Named Functions:**
+```javascript
+function myFunction() { }
+// Label: "myFunction"
+```
+
+**Variable-Assigned Functions:**
+```javascript
+const handler = function() { };
+const process = () => { };
+// Labels: "handler", "process"
+```
+
+**Single Callback:**
+```javascript
+setTimeout(function() {
+    console.log("Hello");
+}, 1000);
+// Label: "clb(setTimeout)"
+```
+
+**Multiple Callbacks:**
+```javascript
+processData(
+    function() { console.log("First"); },
+    () => { console.log("Second"); }
+);
+// Labels: "clb(processData)[1]", "clb(processData)[2]"
+```
+
+**Method Callbacks:**
+```javascript
+[1, 2, 3].forEach(x => console.log(x));
+// Label: "clb(unknown.forEach)"
+
+obj.method.chain(function() { });
+// Label: "clb(obj.method.chain)"
+```
+
+**Nested Anonymous Functions (Non-Callbacks):**
+```javascript
+function outer() {
+    const inner = () => { };  // Label: "inner"
+    (() => { })();            // IIFE - Label: "outer:anon[1]"
+}
+```
+
 ## Testing
 
 ### Test Structure
 
 - `tests/input/`: Test input files organized by feature
   - `basics/`: Basic language features (arrow functions, assignments, etc.)
+  - `callbacks/`: Callback function naming tests
   - `classes/`: Class-related tests
   - `es6/`: ES6+ features (destructuring, patterns, etc.)
   - `import-export/`: Module system tests (ES6, CommonJS, AMD)
