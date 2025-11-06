@@ -1,0 +1,67 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/global-as-prop.js",
+    "start": {
+      "row": 15,
+      "column": 0
+    },
+    "end": {
+      "row": 15,
+      "column": 3
+    },
+    "range": {
+      "start": 512,
+      "end": 515
+    }
+  },
+  "target": {
+    "label": "a",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/global-as-prop.js",
+    "start": {
+      "row": 11,
+      "column": 8
+    },
+    "end": {
+      "row": 11,
+      "column": 34
+    },
+    "range": {
+      "start": 433,
+      "end": 459
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/global-as-prop.js",
+    "start": {
+      "row": 14,
+      "column": 0
+    },
+    "end": {
+      "row": 14,
+      "column": 5
+    },
+    "range": {
+      "start": 506,
+      "end": 511
+    }
+  },
+  "target": {
+    "label": "a",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/global-as-prop.js",
+    "start": {
+      "row": 12,
+      "column": 15
+    },
+    "end": {
+      "row": 12,
+      "column": 41
+    },
+    "range": {
+      "start": 476,
+      "end": 502
+    }
+  }
+}]

@@ -1,3 +1,1 @@
 object-pattern5.js:global:10 -> object-pattern5.js:main:5
-'main' (object-pattern5.js@3:79-96) -> 'console_log' (Native)
-'main' (object-pattern5.js@3:79-96) -> 'Math_log' (Native)

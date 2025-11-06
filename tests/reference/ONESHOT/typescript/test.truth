@@ -1,3 +1,1 @@
-test.tsx:global:14 -> test.tsx:anon:14
-'getRandomGreeting' (test.tsx@6:208-221) -> 'Math_random' (Native)
-'getRandomGreeting' (test.tsx@6:197-226) -> 'Math_floor' (Native)
+test.tsx:global:14 -> test.tsx:global:anon[1]:14

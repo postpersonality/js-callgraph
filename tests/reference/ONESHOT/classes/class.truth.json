@@ -1,0 +1,166 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 16,
+      "column": 15
+    },
+    "end": {
+      "row": 16,
+      "column": 36
+    },
+    "range": {
+      "start": 248,
+      "end": 269
+    }
+  },
+  "target": {
+    "label": "constructor",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 2,
+      "column": 13
+    },
+    "end": {
+      "row": 5,
+      "column": 3
+    },
+    "range": {
+      "start": 31,
+      "end": 102
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 18,
+      "column": 12
+    },
+    "end": {
+      "row": 18,
+      "column": 29
+    },
+    "range": {
+      "start": 284,
+      "end": 301
+    }
+  },
+  "target": {
+    "label": "calcArea",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 11,
+      "column": 10
+    },
+    "end": {
+      "row": 13,
+      "column": 3
+    },
+    "range": {
+      "start": 184,
+      "end": 229
+    }
+  }
+},{
+  "source": {
+    "label": "area",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 8,
+      "column": 11
+    },
+    "end": {
+      "row": 8,
+      "column": 26
+    },
+    "range": {
+      "start": 141,
+      "end": 156
+    }
+  },
+  "target": {
+    "label": "calcArea",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 11,
+      "column": 10
+    },
+    "end": {
+      "row": 13,
+      "column": 3
+    },
+    "range": {
+      "start": 184,
+      "end": 229
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 18,
+      "column": 0
+    },
+    "end": {
+      "row": 18,
+      "column": 30
+    },
+    "range": {
+      "start": 272,
+      "end": 302
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/classes/class.js",
+    "start": {
+      "row": 18,
+      "column": 0
+    },
+    "end": {
+      "row": 18,
+      "column": 30
+    },
+    "range": {
+      "start": 272,
+      "end": 302
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

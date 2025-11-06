@@ -75,6 +75,19 @@ function init(root) {
     // global collections containing all functions and all call sites
     root.attr.functions = [];
     root.attr.calls = [];
+    
+    // Map for tracking anonymous function counters
+    // Key: enclosingFunction (or 'global'), Value: counter
+    const anonCounters = new Map();
+    
+    function getNextAnonIndex(encFunc) {
+        const key = encFunc || 'global';
+        const current = anonCounters.get(key) || 0;
+        const next = current + 1;
+        anonCounters.set(key, next);
+        return next;
+    }
+    
     visit(root, function (nd, doVisit, parent, childProp) {
         if (nd.type && !nd.attr)
             nd.attr = {};
@@ -139,6 +152,30 @@ function init(root) {
             root.attr.functions.push(nd);
             nd.attr.parent = parent;
             nd.attr.childProp = childProp;
+            
+            // Check if function will be anonymous after all naming attempts
+            // This mirrors the logic in funcname()
+            let willBeAnonymous = false;
+            if (nd.id === null) {
+                // Check if parent provides a name
+                let hasParentName = false;
+                if (parent?.type === 'AssignmentExpression') {
+                    if (parent?.left?.type == 'Identifier') {
+                        hasParentName = true;
+                    }
+                } else if (parent?.type == 'VariableDeclarator') {
+                    if (parent?.id?.type == 'Identifier') {
+                        hasParentName = true;
+                    }
+                }
+                willBeAnonymous = !hasParentName;
+            }
+            
+            // If function is anonymous, assign it an index
+            if (willBeAnonymous) {
+                nd.attr.anonIndex = getNextAnonIndex(enclosingFunction);
+            }
+            
             const old_enclosingFunction = enclosingFunction;
             enclosingFunction = nd;
             doVisit(nd.id);
@@ -220,7 +257,15 @@ function funcname(func) {
                 return parent.id.name;
             }
         }
-        return "anon";
+        
+        // If function has an anonymous index, use numbered naming
+        if (func.attr && typeof func.attr.anonIndex === 'number') {
+            const encFunc = func.attr.enclosingFunction;
+            const parentName = encFuncName(encFunc);
+            return `${parentName}:anon[${func.attr.anonIndex}]`;
+        }
+        
+        return "anon"; // fallback
     }
     return func.id.name;
 }

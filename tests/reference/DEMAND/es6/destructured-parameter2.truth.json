@@ -1,0 +1,100 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 16,
+      "column": 0
+    },
+    "end": {
+      "row": 16,
+      "column": 6
+    },
+    "range": {
+      "start": 324,
+      "end": 330
+    }
+  },
+  "target": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 8,
+      "column": 0
+    },
+    "end": {
+      "row": 14,
+      "column": 1
+    },
+    "range": {
+      "start": 209,
+      "end": 322
+    }
+  }
+},{
+  "source": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 13,
+      "column": 1
+    },
+    "end": {
+      "row": 13,
+      "column": 16
+    },
+    "range": {
+      "start": 304,
+      "end": 319
+    }
+  },
+  "target": {
+    "label": "f",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 9,
+      "column": 1
+    },
+    "end": {
+      "row": 11,
+      "column": 2
+    },
+    "range": {
+      "start": 229,
+      "end": 269
+    }
+  }
+},{
+  "source": {
+    "label": "f",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 10,
+      "column": 9
+    },
+    "end": {
+      "row": 10,
+      "column": 12
+    },
+    "range": {
+      "start": 262,
+      "end": 265
+    }
+  },
+  "target": {
+    "label": "f2",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/destructured-parameter2.js",
+    "start": {
+      "row": 12,
+      "column": 12
+    },
+    "end": {
+      "row": 12,
+      "column": 31
+    },
+    "range": {
+      "start": 282,
+      "end": 301
+    }
+  }
+}]

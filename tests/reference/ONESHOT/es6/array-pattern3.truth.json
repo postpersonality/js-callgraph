@@ -1,0 +1,100 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 11,
+      "column": 0
+    },
+    "end": {
+      "row": 11,
+      "column": 6
+    },
+    "range": {
+      "start": 268,
+      "end": 274
+    }
+  },
+  "target": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 5,
+      "column": 0
+    },
+    "end": {
+      "row": 9,
+      "column": 1
+    },
+    "range": {
+      "start": 170,
+      "end": 266
+    }
+  }
+},{
+  "source": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 7,
+      "column": 13
+    },
+    "end": {
+      "row": 7,
+      "column": 16
+    },
+    "range": {
+      "start": 254,
+      "end": 257
+    }
+  },
+  "target": {
+    "label": "f",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 6,
+      "column": 11
+    },
+    "end": {
+      "row": 6,
+      "column": 50
+    },
+    "range": {
+      "start": 200,
+      "end": 239
+    }
+  }
+},{
+  "source": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 8,
+      "column": 1
+    },
+    "end": {
+      "row": 8,
+      "column": 4
+    },
+    "range": {
+      "start": 260,
+      "end": 263
+    }
+  },
+  "target": {
+    "label": "f:anon[1]",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/array-pattern3.js",
+    "start": {
+      "row": 6,
+      "column": 27
+    },
+    "end": {
+      "row": 6,
+      "column": 46
+    },
+    "range": {
+      "start": 216,
+      "end": 235
+    }
+  }
+}]

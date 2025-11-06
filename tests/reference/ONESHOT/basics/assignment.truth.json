@@ -1,0 +1,133 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 11,
+      "column": 0
+    },
+    "end": {
+      "row": 11,
+      "column": 6
+    },
+    "range": {
+      "start": 192,
+      "end": 198
+    }
+  },
+  "target": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 2,
+      "column": 0
+    },
+    "end": {
+      "row": 9,
+      "column": 1
+    },
+    "range": {
+      "start": 77,
+      "end": 190
+    }
+  }
+},{
+  "source": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 8,
+      "column": 1
+    },
+    "end": {
+      "row": 8,
+      "column": 4
+    },
+    "range": {
+      "start": 184,
+      "end": 187
+    }
+  },
+  "target": {
+    "label": "funcB",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 4,
+      "column": 9
+    },
+    "end": {
+      "row": 6,
+      "column": 2
+    },
+    "range": {
+      "start": 116,
+      "end": 173
+    }
+  }
+},{
+  "source": {
+    "label": "funcB",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 5,
+      "column": 2
+    },
+    "end": {
+      "row": 5,
+      "column": 33
+    },
+    "range": {
+      "start": 138,
+      "end": 169
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "funcB",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/assignment.js",
+    "start": {
+      "row": 5,
+      "column": 2
+    },
+    "end": {
+      "row": 5,
+      "column": 33
+    },
+    "range": {
+      "start": 138,
+      "end": 169
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

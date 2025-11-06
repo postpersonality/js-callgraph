@@ -1,9 +1,1 @@
 object-pattern4.js:global:13 -> object-pattern4.js:main:5
-'main' (object-pattern4.js@6:135-149) -> 'console_log' (Native)
-'main' (object-pattern4.js@6:135-149) -> 'Math_log' (Native)
-'main' (object-pattern4.js@5:115-129) -> 'console_log' (Native)
-'main' (object-pattern4.js@5:115-129) -> 'Math_log' (Native)
-'main' (object-pattern4.js@4:95-109) -> 'console_log' (Native)
-'main' (object-pattern4.js@4:95-109) -> 'Math_log' (Native)
-'main' (object-pattern4.js@3:75-89) -> 'console_log' (Native)
-'main' (object-pattern4.js@3:75-89) -> 'Math_log' (Native)

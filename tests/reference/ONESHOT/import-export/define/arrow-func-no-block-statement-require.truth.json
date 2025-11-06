@@ -1,0 +1,67 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/import-export/define/arrow-func-no-block-statement-require.js",
+    "start": {
+      "row": 4,
+      "column": 0
+    },
+    "end": {
+      "row": 4,
+      "column": 20
+    },
+    "range": {
+      "start": 143,
+      "end": 163
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/import-export/define/arrow-func-no-block-statement-require.js",
+    "start": {
+      "row": 4,
+      "column": 0
+    },
+    "end": {
+      "row": 4,
+      "column": 20
+    },
+    "range": {
+      "start": 143,
+      "end": 163
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

@@ -1,0 +1,67 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/method-def.js",
+    "start": {
+      "row": 10,
+      "column": 0
+    },
+    "end": {
+      "row": 10,
+      "column": 19
+    },
+    "range": {
+      "start": 137,
+      "end": 156
+    }
+  },
+  "target": {
+    "label": "randomMethod1",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/method-def.js",
+    "start": {
+      "row": 2,
+      "column": 19
+    },
+    "end": {
+      "row": 4,
+      "column": 5
+    },
+    "range": {
+      "start": 31,
+      "end": 69
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/method-def.js",
+    "start": {
+      "row": 11,
+      "column": 0
+    },
+    "end": {
+      "row": 11,
+      "column": 19
+    },
+    "range": {
+      "start": 158,
+      "end": 177
+    }
+  },
+  "target": {
+    "label": "randomMethod2",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/method-def.js",
+    "start": {
+      "row": 5,
+      "column": 21
+    },
+    "end": {
+      "row": 7,
+      "column": 5
+    },
+    "range": {
+      "start": 92,
+      "end": 133
+    }
+  }
+}]

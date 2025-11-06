@@ -1,0 +1,34 @@
+[{
+  "source": {
+    "label": "caller",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/arrow-call.js",
+    "start": {
+      "row": 2,
+      "column": 21
+    },
+    "end": {
+      "row": 2,
+      "column": 29
+    },
+    "range": {
+      "start": 46,
+      "end": 54
+    }
+  },
+  "target": {
+    "label": "callee",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/basics/arrow-call.js",
+    "start": {
+      "row": 1,
+      "column": 15
+    },
+    "end": {
+      "row": 1,
+      "column": 23
+    },
+    "range": {
+      "start": 15,
+      "end": 23
+    }
+  }
+}]

@@ -1,0 +1,67 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/import-export/es6/es6-import-hasOwnProperty.js",
+    "start": {
+      "row": 2,
+      "column": 0
+    },
+    "end": {
+      "row": 2,
+      "column": 51
+    },
+    "range": {
+      "start": 60,
+      "end": 111
+    }
+  },
+  "target": {
+    "label": "console_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/import-export/es6/es6-import-hasOwnProperty.js",
+    "start": {
+      "row": 2,
+      "column": 0
+    },
+    "end": {
+      "row": 2,
+      "column": 51
+    },
+    "range": {
+      "start": 60,
+      "end": 111
+    }
+  },
+  "target": {
+    "label": "Math_log",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]

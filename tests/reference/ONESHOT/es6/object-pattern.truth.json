@@ -1,0 +1,67 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/object-pattern.js",
+    "start": {
+      "row": 11,
+      "column": 0
+    },
+    "end": {
+      "row": 11,
+      "column": 6
+    },
+    "range": {
+      "start": 230,
+      "end": 236
+    }
+  },
+  "target": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/object-pattern.js",
+    "start": {
+      "row": 5,
+      "column": 0
+    },
+    "end": {
+      "row": 9,
+      "column": 1
+    },
+    "range": {
+      "start": 146,
+      "end": 228
+    }
+  }
+},{
+  "source": {
+    "label": "main",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/object-pattern.js",
+    "start": {
+      "row": 8,
+      "column": 1
+    },
+    "end": {
+      "row": 8,
+      "column": 4
+    },
+    "range": {
+      "start": 222,
+      "end": 225
+    }
+  },
+  "target": {
+    "label": "main:anon[1]",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/es6/object-pattern.js",
+    "start": {
+      "row": 6,
+      "column": 17
+    },
+    "end": {
+      "row": 6,
+      "column": 36
+    },
+    "range": {
+      "start": 182,
+      "end": 201
+    }
+  }
+}]

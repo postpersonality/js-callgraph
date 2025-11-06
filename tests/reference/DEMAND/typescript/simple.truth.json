@@ -1,0 +1,34 @@
+[{
+  "source": {
+    "label": "global",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/typescript/simple.ts",
+    "start": {
+      "row": 7,
+      "column": 26
+    },
+    "end": {
+      "row": 7,
+      "column": 39
+    },
+    "range": {
+      "start": 120,
+      "end": 133
+    }
+  },
+  "target": {
+    "label": "greeter",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/typescript/simple.ts",
+    "start": {
+      "row": 1,
+      "column": 0
+    },
+    "end": {
+      "row": 3,
+      "column": 1
+    },
+    "range": {
+      "start": 0,
+      "end": 67
+    }
+  }
+}]

@@ -1,0 +1,166 @@
+[{
+  "source": {
+    "label": "next",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 48,
+      "column": 11
+    },
+    "end": {
+      "row": 48,
+      "column": 45
+    },
+    "range": {
+      "start": 1325,
+      "end": 1359
+    }
+  },
+  "target": {
+    "label": "createIterResultObject",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 57,
+      "column": 0
+    },
+    "end": {
+      "row": 59,
+      "column": 1
+    },
+    "range": {
+      "start": 1472,
+      "end": 1557
+    }
+  }
+},{
+  "source": {
+    "label": "next",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 29,
+      "column": 13
+    },
+    "end": {
+      "row": 29,
+      "column": 52
+    },
+    "range": {
+      "start": 887,
+      "end": 926
+    }
+  },
+  "target": {
+    "label": "createIterResultObject",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 57,
+      "column": 0
+    },
+    "end": {
+      "row": 59,
+      "column": 1
+    },
+    "range": {
+      "start": 1472,
+      "end": 1557
+    }
+  }
+},{
+  "source": {
+    "label": "next",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 20,
+      "column": 13
+    },
+    "end": {
+      "row": 20,
+      "column": 52
+    },
+    "range": {
+      "start": 670,
+      "end": 709
+    }
+  },
+  "target": {
+    "label": "createIterResultObject",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 57,
+      "column": 0
+    },
+    "end": {
+      "row": 59,
+      "column": 1
+    },
+    "range": {
+      "start": 1472,
+      "end": 1557
+    }
+  }
+},{
+  "source": {
+    "label": "next",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 38,
+      "column": 19
+    },
+    "end": {
+      "row": 38,
+      "column": 42
+    },
+    "range": {
+      "start": 1105,
+      "end": 1128
+    }
+  },
+  "target": {
+    "label": "String_prototype_charCodeAt",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+},{
+  "source": {
+    "label": "next",
+    "file": "/home/nikolayseliverstov/Projects/js-callgraph/tests/input/unexpected/stringiterator.js",
+    "start": {
+      "row": 33,
+      "column": 16
+    },
+    "end": {
+      "row": 33,
+      "column": 35
+    },
+    "range": {
+      "start": 964,
+      "end": 983
+    }
+  },
+  "target": {
+    "label": "String_prototype_charCodeAt",
+    "file": "Native",
+    "start": {
+      "row": null,
+      "column": null
+    },
+    "end": {
+      "row": null,
+      "column": null
+    },
+    "range": {
+      "start": null,
+      "end": null
+    }
+  }
+}]
